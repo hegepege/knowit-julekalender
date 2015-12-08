@@ -41,9 +41,28 @@ public class Julekalender {
         }
     }
 
+
+    /*
+    * Finn summen av alle positive heltall mellom 0 og 1000 som er har 7 som en primtallsfaktor, der det reverserte tallet også har 7 som en primtallsfaktor.
+    * For eksempel teller 259 da en får 952 om en reverserer sifrene og begge disse tallene har 7 som en primtallsfaktor.
+    */
     private void luke7() {
         int sum = 0;
 
+        for(int i = 0; i<= 1000; i++){
+            if(i % 7 == 0 && reverse(i) % 7 == 0){
+                sum += i;
+            }
+        }
         System.out.println("Luke 7: " + sum);
+    }
+
+    private int reverse(int i) {
+        int reversed = 0;
+        while(i > 0){
+            reversed = reversed * 10 + i % 10;
+            i = i /10;
+        }
+        return reversed;
     }
 }
