@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.nio.file.Path;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -16,16 +14,16 @@ public class Julekalender {
     public void run(){
         luke1();
         luke7();
+        luke8();
     }
 
-
-/*
-*
-* * Id strengen må begynne med 0-3 små bokstaver (fra a-z).
-* Rett etter bokstavene må det følge 2-8 tall. Tallene har verdi fra og med 0 til og med 9
-* Rett etter tallene må det følge en streng med minst 3 store bokstaver (fra A-Z)
-*
-* */
+    /*
+    *
+    * * Id strengen må begynne med 0-3 små bokstaver (fra a-z).
+    * Rett etter bokstavene må det følge 2-8 tall. Tallene har verdi fra og med 0 til og med 9
+    * Rett etter tallene må det følge en streng med minst 3 store bokstaver (fra A-Z)
+    *
+    * */
     private void luke1() {
         File exampleFile = new File("examples.txt");
         try {
@@ -64,5 +62,22 @@ public class Julekalender {
             i = i /10;
         }
         return reversed;
+    }
+
+
+    /*
+    * Vi definerer et primtall som et MIRPTALL dersom vi fortsatt har er primtall når sifrene reverseres. Regelen gjelder imidlertid ikke dersom tallet samtidig er et palindrom (dvs likt samme hvilken ende det leses fra, som 969).
+
+    Eksempel 1: 13 er et primtall. Det er også et MIRPTALL, fordi tallet i revers, 31, også er et primtall.
+    Eksempel 2: 23 er et primtall. Det er imidlertid ikke et MIRPTALL, da vi får 32 om vi reverserer det, som ikke er et primtall.
+    Eksempel 3: 5 og 101 er ikke MIRPTALL, selv om de er primtall, da disse er palindromer.
+
+    Hvor mange positive heltall under 1000 er MIRPTALL?
+
+    Tips: Selv om 13 og 31 reverseres til hverandre er de fortsatt MIRPTALL “hver for seg” (på grunn av definisjonen). Begge må derfor telles med som en del av resultatet.
+    * */
+    private void luke8() {
+
+
     }
 }

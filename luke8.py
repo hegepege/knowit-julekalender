@@ -43,21 +43,16 @@ def mirprimtall():
 
 def luke9(num):
 	result = ""
-	num = num-1
-	while(True):
+
+	while(num > 0):
 		rem = num % 26
-		print("remainder %d" % rem)
-		aChar = chr(ord('A') + (rem))
-		result = aChar + result
-		
+		num = int(num/26)
+		if(rem == 0):
+			num -= 1
+		if((rem - 1) == -1):
+			rem = 26	
+		result = chr(ord('A') + (rem - 1)) + result
 		print("mellom %s " % result)
-		num = int(num/26)-1
-
-		print("num %d " % num)
-		if(num == 0):
-			break
-
-	#result = chr(ord('A') + (num - 1)) + result
 
 	print(result)
 
